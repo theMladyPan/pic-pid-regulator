@@ -172,7 +172,9 @@ void TMR3_DefaultInterruptHandler(void){
     d = d*.9 + .1*PID_D*((double)setpoint - (double)last_setpoint);
     last_setpoint = setpoint;
     p = PID_P*((double)setpoint - (double)voltage);
-    i += PID_I*(double)(p)/100;
+    if(action < PWM_PRECISION && action > 0){
+        i += PID_I*(double)(p)/100;
+    }
     action = (uint16_t)fminl(fmaxl(0, (p + i + d)), PWM_PRECISION);
     
     EPWM1_LoadDutyValue(action);

@@ -21,7 +21,7 @@
 #include "mcc_generated_files/mcc.h"
 #include <stdlib.h>
 
-volatile uint16_t setpoint = 1000;
+volatile uint16_t setpoint = 1600;
 char str[16];
 
 /*

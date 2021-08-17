@@ -31,8 +31,8 @@
 #undef UNFILTERED_READING
 
 // PID parameters
-#define PID_P 2
-#define PID_I 1
+#define PID_P 5
+#define PID_I 2
 #define PID_D 0.1
 
 //define PWM precision, 1023 = 10bit, 4095 = 12bit etc...
