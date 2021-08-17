@@ -64,6 +64,8 @@ void SYSTEM_Initialize(void)
     TMR3_Initialize();
     TMR1_Initialize();
     EUSART1_Initialize();
+    
+    Lcd_Start();
 }
 
 void OSCILLATOR_Initialize(void)

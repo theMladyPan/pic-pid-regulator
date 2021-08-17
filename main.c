@@ -22,6 +22,7 @@
 #include <stdlib.h>
 
 volatile uint16_t setpoint = 1600;
+volatile uint16_t action;
 char str[16];
 
 /*
@@ -48,20 +49,21 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
     
-    //TRISB = 0x00;  
     while (1)
     {
         // Add your application code
         LED_G_SetHigh();
+        sprintf(str, "U: %dmV   ", voltage);
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
-        sprintf(str, "%d    ", voltage);
+        Lcd_Print_String(str);
+        sprintf(str, "A: %d   ", action);
+        Lcd_Set_Cursor(2,1);
         Lcd_Print_String(str);
         
         while(!EUSART1_is_tx_ready());
-        printf("U: %d, ", voltage);
+        printf("U: %dmV; ", voltage);
         printf("A: %d\n", action);
 
         LED_G_Toggle();

@@ -43,7 +43,7 @@ void Lcd_Set_Cursor(char a, char b)
     char temp,z,y;
     if(a== 1)
     {
-      temp = 0x80 + b - 1; //80H is used to move the curser
+      temp = 0x80 + b - 1; //80H is used to move the cursor
         z = temp>>4; //Lower 8-bits
         y = temp & 0x0F; //Upper 8-bits
         Lcd_Cmd(z); //Set Row
