@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=PID_reg.X
+PROJECTNAME=pic-pid-regulator
 
 # Active Configuration
 DEFAULTCONF=default

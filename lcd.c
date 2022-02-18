@@ -1,5 +1,6 @@
 #include "lcd.h"
 
+
 void Lcd_SetBit(char data_bit) //Based on the Hex value Set the Bits of the Data Lines
 {
     if(data_bit& 1) 
@@ -36,6 +37,7 @@ void Lcd_Clear()
 {
     Lcd_Cmd(0); //Clear the LCD
     Lcd_Cmd(1); //Move the curser to first position
+    __delay_ms(3);
 }
 
 void Lcd_Set_Cursor(char a, char b)
@@ -64,11 +66,10 @@ void Lcd_Start()
   Lcd_SetBit(0x00);
   __delay_ms(10);
   Lcd_Cmd(0x03);
-    __delay_ms(5);
+  __delay_ms(5);
   Lcd_Cmd(0x03);
-    __delay_ms(11);
+  __delay_ms(11);
   Lcd_Cmd(0x03); 
-  Lcd_Cmd(0x02); //02H is used for Return home -> Clears the RAM and initializes the LCD
   Lcd_Cmd(0x02); //02H is used for Return home -> Clears the RAM and initializes the LCD
   Lcd_Cmd(0x08); //Select Row 1
   Lcd_Cmd(0x00); //Clear Row 1 Display
@@ -95,8 +96,7 @@ void Lcd_Print_Char(char data)  //Send 8-bits through 4-bit mode
 
 void Lcd_Print_String(char *a)
 {
-    int i;
-    for(i=0;a[i]!='\0';i++)
+    for(int i=0;a[i]!='\0';i++)
        Lcd_Print_Char(a[i]);  //Split the string using pointers and call the Char function 
 }
 

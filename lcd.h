@@ -14,6 +14,7 @@ extern "C" {
 
 #include "xc.h"
 #include "mcc_generated_files/device_config.h"
+#include "mcc_generated_files/pin_manager.h"
 
 #define RS LATB5
 #define EN LATB4

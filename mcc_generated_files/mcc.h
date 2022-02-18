@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC18F24K22
+        Device            :  PIC18F27Q83
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above or later
@@ -52,20 +52,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <conio.h>
-#include "interrupt_manager.h"
-#include "tmr3.h"
-#include "tmr4.h"
-#include "tmr1.h"
-#include "tmr2.h"
-#include "tmr0.h"
-#include "fvr.h"
-#include "epwm2.h"
-#include "ccp5.h"
-#include "epwm1.h"
-#include "adc.h"
-#include "eusart1.h"
 
-#include "../lcd.h"
 
 
 /**
@@ -93,6 +80,20 @@ void SYSTEM_Initialize(void);
     OSCILLATOR_Initialize(void);
  */
 void OSCILLATOR_Initialize(void);
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the PMD module to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    PMD_Initialize(void);
+ */
+void PMD_Initialize(void);
+
 
 #endif	/* MCC_H */
 /**
