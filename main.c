@@ -41,9 +41,12 @@
     SOFTWARE.
 */
 
+
+
 #include "mcc_generated_files/mcc.h"
-#include "lcd.h"
 #include "stdio.h"
+#include "lcd.h"
+
 
 /*
                          Main application
@@ -63,23 +66,27 @@ void main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
+    LATC4=0;
     char str[16];
-    Lcd_Start();
-    LED_G_SetHigh();
+    __delay_ms(200);
+    LATC4=1;
+    Lcd_Init();
+ 
 
     while (1)
     {
+        
+        __delay_ms(100);
         // Add your application code
         // LED_G_SetHigh();
         //sprintf(str, "U: V   ");
         //LATC4 = !LATC4;
+        
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
-        Lcd_Print_Char('A');
-        Lcd_Print_String("Hello!");
-        LATC4=1;
+        Lcd_Write_Char('A');
+        Lcd_Write_String("Hello!");
         __delay_ms(200);
-        LATC4=0;
         /*
         Lcd_Print_String(str);
         sprintf(str, "A: ");

@@ -166,24 +166,24 @@
 #define EN__SetDigitalMode()     do { ANSELBbits.ANSELB4 = 0; } while(0)
 
 // get/set RS_ aliases
-#define RS__TRIS                 TRISBbits.TRISB5
-#define RS__LAT                  LATBbits.LATB5
-#define RS__PORT                 PORTBbits.RB5
-#define RS__WPU                  WPUBbits.WPUB5
-#define RS__OD                   ODCONBbits.ODCB5
-#define RS__ANS                  ANSELBbits.ANSELB5
-#define RS__SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
-#define RS__SetLow()             do { LATBbits.LATB5 = 0; } while(0)
-#define RS__Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
-#define RS__GetValue()           PORTBbits.RB5
-#define RS__SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
-#define RS__SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
-#define RS__SetPullup()          do { WPUBbits.WPUB5 = 1; } while(0)
-#define RS__ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
-#define RS__SetPushPull()        do { ODCONBbits.ODCB5 = 0; } while(0)
-#define RS__SetOpenDrain()       do { ODCONBbits.ODCB5 = 1; } while(0)
-#define RS__SetAnalogMode()      do { ANSELBbits.ANSELB5 = 1; } while(0)
-#define RS__SetDigitalMode()     do { ANSELBbits.ANSELB5 = 0; } while(0)
+#define RS__TRIS                 TRISCbits.TRISC3
+#define RS__LAT                  LATCbits.LATC3
+#define RS__PORT                 PORTCbits.RC3
+#define RS__WPU                  WPUCbits.WPUC3
+#define RS__OD                   ODCONCbits.ODCC3
+#define RS__ANS                  ANSELCbits.ANSELC3
+#define RS__SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define RS__SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define RS__Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define RS__GetValue()           PORTCbits.RC3
+#define RS__SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define RS__SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define RS__SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
+#define RS__ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
+#define RS__SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
+#define RS__SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
+#define RS__SetAnalogMode()      do { ANSELCbits.ANSELC3 = 1; } while(0)
+#define RS__SetDigitalMode()     do { ANSELCbits.ANSELC3 = 0; } while(0)
 
 // get/set LED_G aliases
 #define LED_G_TRIS                 TRISCbits.TRISC4
